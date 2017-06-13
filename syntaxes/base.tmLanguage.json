@@ -1,0 +1,51 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "B@SE",
+    "foldingStartMarker": "\\[%[^/].*%]",
+    "foldingStopMarker": "\\[%\/.*%]",
+    "patterns": [{
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "text.html.basic"
+        },
+        {
+            "name": "support.variable.base",
+            "begin": "\\[@",
+            "end": "@]",
+            "patterns": []
+        },
+        {
+            "name": "support.function.base",
+            "begin": "\\[%",
+            "end": "%]",
+            "patterns": [
+
+            ]
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.base",
+                "match": "\\b(if|while|for|return)\\b"
+            }]
+        },
+        "strings": {
+            "name": "string.quoted.double.base",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                { "include": "$self" },
+                {
+                    "name": "constant.character.escape.base",
+                    "match": "\\\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "text.html.base"
+}

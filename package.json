@@ -1,0 +1,33 @@
+{
+    "name": "neto-base",
+    "displayName": "neto-base",
+    "description": "Neto B@SE syntax highlighting",
+    "version": "0.0.1",
+    "publisher": "test",
+    "engines": {
+        "vscode": "^1.12.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "base",
+            "aliases": ["B@SE", "base", "Base", "BASE"],
+            "extensions": [".html"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "base",
+            "scopeName": "text.html.base",
+            "path": "./syntaxes/base.tmLanguage.json",
+            "embeddedLanguages": {
+					"text.html": "html",
+					"text.xml": "xml",
+					"source.js": "javascript",
+					"source.json": "json",
+					"source.css": "css"
+				}
+        }]
+    }
+}
