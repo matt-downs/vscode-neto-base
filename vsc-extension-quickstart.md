@@ -18,6 +18,9 @@ comments and brackets.
 * you can relaunch the extension from the debug toolbar after making changes to the files listed above
 * you can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to load your changes
 
+## Language Grammars Reference
+http://manual.macromates.com/en/language_grammars
+
 ## Add more language features
 * To add features such as intellisense, hovers and validators check out the VS Code extenders documentation at
 https://code.visualstudio.com/docs
