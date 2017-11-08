@@ -14,18 +14,18 @@
             "include": "#variables"
         },
         {
-            "name": "meta.function.base",
+            "name": "entity.name.function",
             "begin": "\\[%",
             "end": "%]",
             "patterns": [
                 {
                     "name": "entity.name.function",
-                    "begin": "\\.",
-                    "end": "\\s",
+                    "begin": "\\[%",
+                    "end": " ",
                     "patterns": []
                 },
                 {
-                    "include": "#constants"
+                    "include": "#quotes"
                 },
                 {
                     "include": "#variables"
@@ -34,17 +34,24 @@
         }
     ],
     "repository": {
-        "constants": {
-            "name": "support.constant.base",
-            "begin": "\\[@config:",
-            "end": "@]",
-            "patterns": []
-        },
         "variables": {
             "name": "support.variable.base",
             "begin": "\\[@",
             "end": "@]",
             "patterns": []
+        },
+        "quotes": {
+            "name": "string.quoted.single.base",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#variables"
+                }
+            ]
         }
     },
     "scopeName": "text.html.base"
