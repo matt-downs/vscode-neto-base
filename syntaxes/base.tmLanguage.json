@@ -3,48 +3,48 @@
     "name": "B@SE",
     "foldingStartMarker": "\\[%[^/].*%]",
     "foldingStopMarker": "\\[%\/.*%]",
-    "patterns": [{
-            "include": "#keywords"
-        },
-        {
-            "include": "#strings"
-        },
+    "patterns": [
         {
             "include": "text.html.basic"
         },
         {
-            "name": "support.variable.base",
-            "begin": "\\[@",
-            "end": "@]",
-            "patterns": []
+            "include": "#constants"
         },
         {
-            "name": "support.function.base",
+            "include": "#variables"
+        },
+        {
+            "name": "meta.function.base",
             "begin": "\\[%",
             "end": "%]",
             "patterns": [
-
+                {
+                    "name": "entity.name.function",
+                    "begin": "\\.",
+                    "end": "\\s",
+                    "patterns": []
+                },
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#variables"
+                }
             ]
         }
     ],
     "repository": {
-        "keywords": {
-            "patterns": [{
-                "name": "keyword.control.base",
-                "match": "\\b(if|while|for|return)\\b"
-            }]
+        "constants": {
+            "name": "support.constant.base",
+            "begin": "\\[@config:",
+            "end": "@]",
+            "patterns": []
         },
-        "strings": {
-            "name": "string.quoted.double.base",
-            "begin": "\"",
-            "end": "\"",
-            "patterns": [
-                { "include": "$self" },
-                {
-                    "name": "constant.character.escape.base",
-                    "match": "\\\\."
-                }
-            ]
+        "variables": {
+            "name": "support.variable.base",
+            "begin": "\\[@",
+            "end": "@]",
+            "patterns": []
         }
     },
     "scopeName": "text.html.base"
