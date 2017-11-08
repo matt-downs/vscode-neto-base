@@ -14,30 +14,34 @@
             "include": "#variables"
         },
         {
-            "name": "entity.name.function",
-            "begin": "\\[%",
-            "end": "%]",
+            "name": "entity.name.tag.base",
+            "begin": "(?i)\\[%\/?((if|elseif|else|while)|(\\w+))",
+            "end": "\/?%]",
+            "beginCaptures": {
+                "2": {
+                    "name": "keyword.control.base"
+                },
+                "3": {
+                    "name": "entity.name.function.base"
+                }
+            },
             "patterns": [
                 {
-                    "name": "entity.name.function",
-                    "begin": "\\[%",
-                    "end": " ",
-                    "patterns": []
-                },
-                {
-                    "include": "#quotes"
-                },
-                {
-                    "include": "#variables"
+                    "include": "#functionParams"
                 }
             ]
         }
     ],
     "repository": {
         "variables": {
-            "name": "support.variable.base",
-            "begin": "\\[@",
+            "name": "entity.name.tag.base",
+            "begin": "\\[@([^\\s@]+)",
             "end": "@]",
+            "beginCaptures": {
+                "1": {
+                    "name": "support.variable.base"
+                }
+            },
             "patterns": []
         },
         "quotes": {
@@ -46,10 +50,30 @@
             "end": "'",
             "patterns": [
                 {
-                    "include": "#constants"
+                    "include": "#variables"
+                }
+            ]
+        },
+        "keywords": {
+            "name": "keyword.operator.base",
+            "begin": "",
+            "end": "",
+            "match": "(?i) (==|eq|!=|ne|<=|>=|<|>|or|and|like) ",
+            "patterns": []
+        },
+        "functionParams": {
+            "name": "variable.parameter.base",
+            "begin": ".+?",
+            "end": "(?=\/?%])",
+            "patterns": [
+                {
+                    "include": "#quotes"
                 },
                 {
                     "include": "#variables"
+                },
+                {
+                    "include": "#keywords"
                 }
             ]
         }
