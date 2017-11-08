@@ -15,7 +15,7 @@
         "url": "https://github.com/matt-downs/vscode-neto-base/issues"
     },
     "repository": {
-        "type": "git",        
+        "type": "git",
         "url": "https://github.com/matt-downs/vscode-neto-base"
     },
     "engines": {
@@ -36,12 +36,12 @@
             "scopeName": "text.html.base",
             "path": "./syntaxes/base.tmLanguage.json",
             "embeddedLanguages": {
-					"text.html": "html",
-					"text.xml": "xml",
-					"source.js": "javascript",
-					"source.json": "json",
-					"source.css": "css"
-				}
+                "text.html": "html",
+                "text.xml": "xml",
+                "source.js": "javascript",
+                "source.json": "json",
+                "source.css": "css"
+            }
         }]
     }
 }
