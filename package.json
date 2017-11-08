@@ -1,9 +1,23 @@
 {
     "name": "neto-base",
-    "displayName": "neto-base",
-    "description": "Neto B@SE syntax highlighting",
-    "version": "0.0.1",
-    "publisher": "test",
+    "displayName": "Neto B@SE",
+    "description": "Syntax highlighting for Neto B@SE",
+    "keywords": [
+        "Neto",
+        "B@SE",
+        "base",
+        "syntax",
+        "highlight"
+    ],
+    "version": "1.0.1",
+    "publisher": "matt-downs",
+    "bugs": {
+        "url": "https://github.com/matt-downs/vscode-neto-base/issues"
+    },
+    "repository": {
+        "type": "git",        
+        "url": "https://github.com/matt-downs/vscode-neto-base"
+    },
     "engines": {
         "vscode": "^1.12.0"
     },
