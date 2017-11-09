@@ -9,7 +9,7 @@
         "syntax",
         "highlight"
     ],
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "matt-downs",
     "bugs": {
         "url": "https://github.com/matt-downs/vscode-neto-base/issues"

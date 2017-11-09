@@ -15,13 +15,13 @@
         },
         {
             "name": "entity.name.tag.base",
-            "begin": "(?i)\\[%\/?((if|elseif|else|while)|(\\w+))",
+            "begin": "(?i)\\[% ?(\/ ?|end )?((if|elseif|else|while)|(\\w+))((?= )|(?=%)|(?=\/%))",
             "end": "\/?%]",
             "beginCaptures": {
-                "2": {
+                "3": {
                     "name": "keyword.control.base"
                 },
-                "3": {
+                "4": {
                     "name": "entity.name.function.base"
                 }
             },
