@@ -11,6 +11,7 @@
     ],
     "version": "1.0.2",
     "publisher": "matt-downs",
+    "icon": "images/icon.png",
     "bugs": {
         "url": "https://github.com/matt-downs/vscode-neto-base/issues"
     },
@@ -27,8 +28,15 @@
     "contributes": {
         "languages": [{
             "id": "base",
-            "aliases": ["B@SE", "base", "Base", "BASE"],
-            "extensions": [".html"],
+            "aliases": [
+                "B@SE",
+                "base",
+                "Base",
+                "BASE"
+            ],
+            "extensions": [
+                ".html"
+            ],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
