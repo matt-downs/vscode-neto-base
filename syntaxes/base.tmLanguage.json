@@ -5,31 +5,16 @@
     "foldingStopMarker": "\\[%\/.*%]",
     "patterns": [
         {
-            "include": "text.html.basic"
+            "include": "#htmlCommentsOverride"
         },
         {
-            "include": "#constants"
+            "include": "text.html.basic"
         },
         {
             "include": "#variables"
         },
         {
-            "name": "entity.name.tag.base",
-            "begin": "(?i)\\[% ?(\/ ?|end )?((if|elseif|else|while)|(\\w+))((?= )|(?=%)|(?=\/%))",
-            "end": "\/?%]",
-            "beginCaptures": {
-                "3": {
-                    "name": "keyword.control.base"
-                },
-                "4": {
-                    "name": "entity.name.function.base"
-                }
-            },
-            "patterns": [
-                {
-                    "include": "#functionParams"
-                }
-            ]
+            "include": "#functions"
         }
     ],
     "repository": {
@@ -76,6 +61,49 @@
                     "include": "#keywords"
                 }
             ]
+        },
+        "functions": {
+            "name": "entity.name.tag.base",
+            "begin": "(?i)\\[% ?(\/ ?|end )?((if|elseif|else|while)|(\\w+))((?= )|(?=%)|(?=\/%))",
+            "end": "\/?%]",
+            "beginCaptures": {
+                "3": {
+                    "name": "keyword.control.base"
+                },
+                "4": {
+                    "name": "entity.name.function.base"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "#functionParams"
+                }
+            ]
+        },
+        "htmlCommentsOverride": {
+			"begin": "<!--",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.html"
+				}
+			},
+			"end": "--\\s*>",
+			"name": "comment.block.html",
+			"patterns": [
+				{
+					"match": "--",
+					"name": "invalid.illegal.bad-comments-or-CDATA.html"
+				},
+				{
+					"include": "#embedded-code"
+                },
+                {
+                    "include": "#variables"
+                },
+                {
+                    "include": "#functions"
+                }
+			]
         }
     },
     "scopeName": "text.html.base"
