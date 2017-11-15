@@ -1,5 +1,7 @@
 # Change Log
-All notable changes to the "neto-base" extension will be documented in this file.
+
+## 1.1.1
+- Minor changes to the publishing process
 
 ## 1.1.0
 - Syntax highlighting now works within all HTML elements (such as comments and element attributes)
