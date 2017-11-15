@@ -55,5 +55,13 @@
 				}
 			}
 		]
+	},
+	"scripts": {
+		"predeploy": "node ./node_modules/deploy-checklist ./deployChecklist.json",
+		"deploy": "vsce publish"
+	},
+	"devDependencies": {
+		"deploy-checklist": "github:matt-downs/deploy-checklist",
+		"vsce": "^1.33.2"
 	}
 }
