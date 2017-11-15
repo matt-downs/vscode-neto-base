@@ -1,55 +1,59 @@
 {
-    "name": "neto-base",
-    "displayName": "Neto B@SE",
-    "description": "Syntax highlighting for Neto B@SE",
-    "keywords": [
-        "Neto",
-        "B@SE",
-        "base",
-        "syntax",
-        "highlight"
-    ],
-    "version": "1.0.3",
-    "publisher": "matt-downs",
-    "icon": "images/icon.png",
-    "bugs": {
-        "url": "https://github.com/matt-downs/vscode-neto-base/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/matt-downs/vscode-neto-base"
-    },
-    "engines": {
-        "vscode": "^1.12.0"
-    },
-    "categories": [
-        "Languages"
-    ],
-    "contributes": {
-        "languages": [{
-            "id": "base",
-            "aliases": [
-                "B@SE",
-                "base",
-                "Base",
-                "BASE"
-            ],
-            "extensions": [
-                ".html"
-            ],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "base",
-            "scopeName": "text.html.base",
-            "path": "./syntaxes/base.tmLanguage.json",
-            "embeddedLanguages": {
-                "text.html": "html",
-                "text.xml": "xml",
-                "source.js": "javascript",
-                "source.json": "json",
-                "source.css": "css"
-            }
-        }]
-    }
+	"name": "neto-base",
+	"displayName": "Neto B@SE",
+	"description": "Syntax highlighting for Neto B@SE",
+	"keywords": [
+		"Neto",
+		"B@SE",
+		"base",
+		"syntax",
+		"highlight"
+	],
+	"version": "1.1.0",
+	"publisher": "matt-downs",
+	"icon": "images/icon.png",
+	"bugs": {
+		"url": "https://github.com/matt-downs/vscode-neto-base/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/matt-downs/vscode-neto-base"
+	},
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "base",
+				"aliases": [
+					"B@SE",
+					"base",
+					"Base",
+					"BASE"
+				],
+				"extensions": [
+					".html"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "base",
+				"scopeName": "text.html.base",
+				"path": "./syntaxes/base.tmLanguage.json",
+				"embeddedLanguages": {
+					"text.html": "html",
+					"text.xml": "xml",
+					"source.js": "javascript",
+					"source.json": "json",
+					"source.css": "css"
+				}
+			}
+		]
+	}
 }
