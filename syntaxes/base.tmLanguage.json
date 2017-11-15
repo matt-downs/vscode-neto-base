@@ -3,65 +3,25 @@
     "name": "B@SE",
     "foldingStartMarker": "\\[%[^/].*%]",
     "foldingStopMarker": "\\[%\/.*%]",
+    "scopeName": "text.html.base",
+    "injections": {
+        "text.html.base": {
+            "patterns": [
+                {
+                    "include": "#variables"
+                },
+                {
+                    "include": "#functions"
+                }
+            ]
+        }
+    },
     "patterns": [
         {
-            "include": "#htmlCommentsOverride"
-        },
-        {
             "include": "text.html.basic"
-        },
-        {
-            "include": "#variables"
-        },
-        {
-            "include": "#functions"
         }
     ],
     "repository": {
-        "variables": {
-            "name": "entity.name.tag.base",
-            "begin": "\\[@([^\\s@]+)",
-            "end": "@]",
-            "beginCaptures": {
-                "1": {
-                    "name": "support.variable.base"
-                }
-            },
-            "patterns": []
-        },
-        "quotes": {
-            "name": "string.quoted.single.base",
-            "begin": "'",
-            "end": "'",
-            "patterns": [
-                {
-                    "include": "#variables"
-                }
-            ]
-        },
-        "keywords": {
-            "name": "keyword.operator.base",
-            "begin": "",
-            "end": "",
-            "match": "(?i) (==|eq|!=|ne|<=|>=|<|>|or|and|like) ",
-            "patterns": []
-        },
-        "functionParams": {
-            "name": "variable.parameter.base",
-            "begin": ".+?",
-            "end": "(?=\/?%])",
-            "patterns": [
-                {
-                    "include": "#quotes"
-                },
-                {
-                    "include": "#variables"
-                },
-                {
-                    "include": "#keywords"
-                }
-            ]
-        },
         "functions": {
             "name": "entity.name.tag.base",
             "begin": "(?i)\\[% ?(\/ ?|end )?((if|elseif|else|while)|(\\w+))((?= )|(?=%)|(?=\/%))",
@@ -80,31 +40,49 @@
                 }
             ]
         },
-        "htmlCommentsOverride": {
-			"begin": "<!--",
-			"captures": {
-				"0": {
-					"name": "punctuation.definition.comment.html"
-				}
-			},
-			"end": "--\\s*>",
-			"name": "comment.block.html",
-			"patterns": [
-				{
-					"match": "--",
-					"name": "invalid.illegal.bad-comments-or-CDATA.html"
-				},
-				{
-					"include": "#embedded-code"
+        "functionParams": {
+            "name": "variable.parameter.base",
+            "begin": ".+?",
+            "end": "(?=\/?%])",
+            "patterns": [
+                {
+                    "include": "#quotes"
                 },
                 {
                     "include": "#variables"
                 },
                 {
-                    "include": "#functions"
+                    "include": "#keywords"
                 }
-			]
+            ]
+        },
+        "keywords": {
+            "name": "keyword.operator.base",
+            "begin": "",
+            "end": "",
+            "match": "(?i) (==|eq|!=|ne|<=|>=|<|>|or|and|like) ",
+            "patterns": []
+        },
+        "quotes": {
+            "name": "string.quoted.single.base",
+            "begin": "'",
+            "end": "'",
+            "patterns": [
+                {
+                    "include": "#variables"
+                }
+            ]
+        },
+        "variables": {
+            "name": "entity.name.tag.base",
+            "begin": "\\[@([^\\s@]+)",
+            "end": "@]",
+            "beginCaptures": {
+                "1": {
+                    "name": "support.variable.base"
+                }
+            },
+            "patterns": []
         }
-    },
-    "scopeName": "text.html.base"
+    }
 }
