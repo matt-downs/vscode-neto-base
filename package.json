@@ -54,7 +54,13 @@
 					"source.css": "css"
 				}
 			}
-		]
+		],
+		"snippets": [
+            {
+                "language": "base",
+                "path": "./snippets/base.json"
+            }
+        ]
 	},
 	"scripts": {
 		"predeploy": "node ./node_modules/deploy-checklist ./deployChecklist.json",

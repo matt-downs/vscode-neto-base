@@ -1,0 +1,723 @@
+{
+    "Param tag": {
+        "prefix": "param start and close",
+        "body": "[%param $1%]$2[%/param%]"
+    },
+    "Advert": {
+        "prefix": "advert",
+        "body": "[%advert type:'text' ad_group:'$1' template:'$2' limit:'1'/%]"
+    },
+    "Breadcrumb": {
+        "prefix": "breadcrumb",
+        "body": [
+            "[%breadcrumb%]",
+            "\t[%param *header%]",
+            "\t\t<ul>",
+            "\t\t\t<li><a href=\"[%url page:'home'/%]\">Home</a></li>",
+            "\t[%end param%]",
+            "\t[%param *body%]",
+            "\t\t<li><a href=\"[@url@]\">[@name@]</a></li>",
+            "\t[%/param%]",
+            "\t[%param *body_current%]",
+            "\t\t<li>[@name@]</li>",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t\t</ul>",
+            "\t[%/param%]",
+            "[%/breadcrumb%]"
+        ]
+    },
+    "Content zone": {
+        "prefix": "content_zone",
+        "body": "[%content_zone id:'$1'/%]"
+    },
+    "Content menu": {
+        "prefix": "content_menu",
+        "body": [
+            "[%content_menu content_type:'category' sortby:'sortorder' show_empty:'1'%]",
+            "\t[%param header%]",
+            "\t\t<ul>",
+            "\t[%/param%]",
+            "\t[%param *level_1%]",
+            "\t\t<li>",
+            "\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_2%]",
+            "\t\t<li>",
+            "\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_3%]",
+            "\t\t<li><a href=\"[@url@]\">[@name@]</a></li>",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t</ul>",
+            "\t[%/param%]",
+            "[%/content_menu%]"
+        ]
+    },
+    "Content Path": {
+        "prefix": "content_path",
+        "body": [
+            "[%content_path content_id:'[@content_id@]'%]",
+            "\t[%param *body%][@content_fullpath@][%/param%]",
+            "[%/content_path%]"
+        ]
+    },
+    "Payment Methods": {
+        "prefix": "payment_methods",
+        "body": [
+            "[%payment_methods%]",
+            "\t[%param *body%]$1 [@name@] [@payment_desc_type@] [%/param%]",
+            "[%/payment_methods%]"
+        ]
+    },
+    "Menu": {
+        "prefix": "Menu(Neto)",
+        "body": [
+            "[%menu id:'$1'%]",
+            "\t[%param header%]",
+            "\t\t<ul>",
+            "\t[%/param%]",
+            "\t[%param *level_1%]",
+            "\t\t\t<li>",
+            "\t\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_2%]",
+            "\t\t\t<li>",
+            "\t\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_3%]",
+            "\t\t\t<li><a href=\"[@url@]\">[@name@]</a></li>",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t</ul>",
+            "\t[%/param%]",
+            "[%/menu%]"
+        ]
+    },
+    "Thumblist Content": {
+        "prefix": "thumbcontent",
+        "body": "[%thumb_list type:'content' content_type:'$1' template:'' limit:'99' filter_category:'' filter_content:''/%]"
+    },
+    "Thumblist Products": {
+        "prefix": "thumbproducts",
+        "body": [
+            "[%thumb_list type:'products' template:'' filter_category:'$1' limit:'10'%]",
+            "\t[%param *header%]",
+            "\t\tAll Products",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t[%/param%]",
+            "\t[%param *ifempty%]",
+            "\t\tNo Results Found",
+            "\t[%/param%]",
+            "[%/thumb_list%]"
+        ]
+    },
+
+    "Thumblist Orders": {
+        "prefix": "thumborders",
+        "body": "[%thumb_list type:'order' limit:'10' /%]"
+    },
+
+    "Product History": {
+        "prefix": "product_history",
+        "body": [
+            "[%product_history limit:'10' template:'$1'%]",
+            "\t[%param header%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t$3",
+            "\t[%/param%]",
+            "[%/product_history%]"
+        ]
+    },
+
+    "View by": {
+        "prefix": "viewby",
+        "body": "[%viewby type:'products'/%]"
+    },
+
+    "Sort by": {
+        "prefix": "sortby",
+        "body": "[%sortby type:'products'/%]"
+    },
+
+    "Top sellers": {
+        "prefix": "top_sellers",
+        "body": [
+            "[%top_sellers template:'$1' category:'$2' limit:'$3'%]",
+            "\t[%param header%]",
+            "\t\t$4",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t$5",
+            "\t[%/param%]",
+            "[%/top_sellers%]"
+        ]
+    },
+
+    "Random products": {
+        "prefix": "random_products",
+        "body": [
+            "[%random_products category:'$1' template:'$2' limit:'$3'%]",
+            "\t[%param *header%]",
+            "\t$4",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t\t$5",
+            "\t%/param%]",
+            "[%/random_products%]"
+        ]
+    },
+
+    "Round": {
+        "prefix": "round",
+        "body": "[%round value:'$1' dp:'$2'/%]"
+    },
+
+    "If": {
+        "prefix": "if",
+        "body": "[%if $1%]$2[%/if%]"
+    },
+
+    "If Else": {
+        "prefix": "ifelse",
+        "body": [
+            "[%if $1%]",
+            "\t$2",
+            "[%else%]",
+            "\t$3",
+            "[%/if%]"
+        ]
+    },
+
+    "Set": {
+        "prefix": "set",
+        "body": [
+            "[%set [@$1@] %]",
+            "\t$2",
+            "[%/set%]"
+        ]
+    },
+
+    "Calculation": {
+        "prefix": "calc",
+        "body": "[%calc $1 /%]"
+    },
+
+
+    "nohtml": {
+        "prefix": "nohtml",
+        "body": "[%nohtml%]$1[%/nohtml%]"
+    },
+
+    "Random Number": {
+        "prefix": "random_number",
+        "body": "[%random_number length:'$1'/%]"
+    },
+
+    "Split": {
+        "prefix": "split",
+        "body": [
+            "[%split delimiter:','%]",
+            "\t[%param data1%]$1[%/param%]",
+            "\t[%param data2%]$2[%/param%]",
+            "\t[%param *body%]",
+            "\t\t$3[@data1@] [@data2@]",
+            "\t[%/param%]",
+            "[%/split%]"
+        ]
+    },
+
+    "Random Text": {
+        "prefix": "random_text",
+        "body": "[%random_text length:'$1'/%]"
+    },
+
+    "Years": {
+        "prefix": "years",
+        "body": [
+            "[%years from:'$1-10' to:'$2+10'%]",
+            "\t[%param *body%] [@year@] [%/param%]",
+            "[%/years%]"
+        ]
+    },
+
+    "Debug": {
+        "prefix": "debug(neto)",
+        "body": "[%debug show_data:'1'/%]"
+    },
+
+    "Months": {
+        "prefix": "months",
+        "body": [
+            "[%months%]",
+            "\t [%param *body%] [@month@] [%/param%]",
+            "[%/months%]"
+        ]
+    },
+
+    "Format": {
+        "prefix": "format",
+        "body": "[%format type:'$1'%]$2[%/format%]"
+    },
+
+    "Site Value Set": {
+        "prefix": "site_value(set)",
+        "body": [
+            "[%site_value id:'$1'%]",
+            "\t$2",
+            "[%/site_value%]"
+        ]
+    },
+
+    "Site Value Load": {
+        "prefix": "site_value(load)",
+        "body": "[%site_value id:'$1' type:'load'/%]"
+    },
+
+    "URL Encode": {
+        "prefix": "url_encode",
+        "body": "[%url_encode%]$1[%/url_encode%]"
+    },
+
+    "URL Decode": {
+        "prefix": "url_decode",
+        "body": "[%url_decode%]$1[%/url_decode%]"
+    },
+
+    "NoJS": {
+        "prefix": "nojs",
+        "body": "[%nojs%]$1[%/nojs%]"
+    },
+
+    "No HTML": {
+        "prefix": "nohtml",
+        "body": "[%nohtml%]$1[%/nohtml%]"
+    },
+
+    "URL": {
+        "prefix": "url",
+        "body": "[%url page:'$1' type:'$2'/%]"
+    },
+
+    "Ntheme Asset": {
+        "prefix": "ntheme_asset",
+        "body": "[%ntheme_asset%]$1[%/ntheme_asset%]"
+    },
+
+    "Neto JS": {
+        "prefix": "neto_js",
+        "body": "[%neto_js html:'1' id:'main' /%]"
+    },
+
+    "Asset URL": {
+        "prefix": "asset_url",
+        "body": "[%asset_url type:'$1content' id:'$2[@content_id@]' default:'$3'/%]"
+    },
+
+    "CDN Asset": {
+        "prefix": "cdn_asset",
+        "body": "[%cdn_asset type:'$1' html:'$2' version:'$3' library:'$4' domain:'$5'%]$6[%/cdn_asset%]"
+    },
+
+    "a2z": {
+        "prefix": "a2z",
+        "body": [
+            "[%a2z%]",
+            "\t[%param *body%]",
+            "\t\t[%if [@form:lead@] eq [@upper@]%]",
+            "\t\t\t<li><a class=\"disabled\" href=\"#\">[@upper@]</a></li>",
+            "\t\t[%else%]",
+            "\t\t\t<li><a href=\"[%url type:'page' id:'brands' qs:'lead=[@upper@]'/%]\">[@upper@]</a></li>",
+            "\t\t[%/if%]",
+            "\t[%/param%]",
+            "[%/a2z%]"
+        ]
+    },
+
+    "Product Filter": {
+        "prefix": "product_filter",
+        "body": [
+            "[%product_filter type:'$1category' limit:'$2 100' autohide:'$3 0' filter_parent_content:'$4 1'%]",
+            "\t[%param header%]$5",
+            "\t\t<h4>Filter By Category</h4>",
+            "\t\t<ul>",
+            "\t[%/param%]",
+            "\t[%param *body%]$6",
+            "\t\t\t<li>",
+            "\t\t\t\t[%if [@selected@]%]",
+            "\t\t\t\t\t<a href=\"[@remove_url@]\" rel=\"nofollow\">[@name@] [@total@]</a>",
+            "\t\t\t\t[%else%]",
+            "\t\t\t\t\t<a href=\"[@url@]\">[@name@] [@total@]</a>",
+            "\t\t\t\t[%/if%]",
+            "\t\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t</ul>$7",
+            "\t[%/param%]",
+            "[%/product_filter%]"
+        ]
+    },
+
+    "Filter": {
+        "prefix": "filter(neto)",
+        "body": "[%filter id:'$1keywords' if:'$2ne' value:'$3'/%]"
+    },
+
+    "Filter Code": {
+        "prefix": "filter_code",
+        "body": "[%filter_code id:'$1price'/%]"
+    },
+
+    "Related Products": {
+        "prefix": "related_products",
+        "body": "[%related_products id:'$1[@SKU@]' limit:'$2 10' template:'$3' show_all:'$4 1'/%]"
+    },
+
+    "Upsell Products": {
+        "prefix": "upsell_products",
+        "body": "[%upsell_products id:'$1[@SKU@]' limit:'$2 10' template:'$3' show_all:'$4 1'/%]"
+    },
+
+    "Crosssell Products": {
+        "prefix": "crosssell",
+        "body": "[%crosssell id:'$1[@SKU@]' limit:'$2 10' template:'$3' show_all:'$4 1'/%]"
+    },
+
+    "Item Specifics": {
+        "prefix": "item_specifics",
+        "body": [
+            "[%item_specifics id:'$1[@sku@]'%]",
+            "\t[%param *body%]",
+            "\t\t<p>$2[@itmspec_id@], [@itmspecval_id@], [@itmspec_name@], [@itmspecval_value@]</p>",
+            "\t[%/param%]",
+            "[%/item_specifics%]"
+        ]
+    },
+
+    "Barcode URL": {
+        "prefix": "barcode_url",
+        "body": "[%barcode_url fn:'$1' height:'$2'%]$3[%/barcode_url%]"
+    },
+
+    "Warehouse Quantity": {
+        "prefix": "warehouse_qty",
+        "body": [
+            "[%warehouse_qty id:'$1[@sku@]' showall'$2 1'%]",
+            "\t[%param *header%]",
+            "\t\t$3<h4>Warehouse QTY</h4>",
+            "\t[%/param%]",
+            "\t[%param *body%]",
+            "\t\t$4[@warehouse_quantity@]",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t\t$5",
+            "\t[%/param%]",
+            "[%/warehouse_qty%]"
+        ]
+    },
+
+    "Free Gifts": {
+        "prefix": "free_gifts",
+        "body": "[%free_gifts id:'$1[@sku@]'/%]"
+    },
+
+    "Brand": {
+        "prefix": "brand",
+        "body": [
+            "[%brand id:'$1[@brand@]'%]",
+            "\t[%param body%]",
+            "\t\t$2<h2>[@content_name@]</h2>",
+            "\t\t<p><img src=\"[@brand_image@]\"></p>",
+            "\t\t<p>[@content_short_description1@]</p>",
+            "\t[%/param%]",
+            "[%/brand%]"
+        ]
+    },
+
+    "Display Child Products": {
+        "prefix": "display_child_products",
+        "body": "[%display_child_products id:'$1[@sku@]' template:'$2'/%]"
+    },
+
+    "Product": {
+        "prefix": "product",
+        "body": [
+            "[%product sku:'$1'%]",
+            "\t[%param *body%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "[%/product%]"
+        ]
+    },
+
+    "Multi Level Pricing": {
+        "prefix": "multilevelpricing",
+        "body": [
+            "[%multilevelpricing id:'$1[@sku@]'%]",
+            "\t[%param *body%]",
+            "\t\t$2[@minqty@], [@maxqty@], [@price@]",
+            "\t[%/param%]",
+            "[%/multilevelpricing%]"
+        ]
+    },
+
+    "List Item Variations": {
+        "prefix": "list_item_variations",
+        "body": "[%list_item_variations id:'$1[@current_sku@]'/%]"
+    },
+
+    "Extra Options": {
+        "prefix": "extra_options",
+        "body": [
+            "[%extra_options id:'$1[@sku@]'%]",
+            "\t[%param *header%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "\t[%param *number_option%]",
+            "\t\t$3 [@name@], [@sku@]",
+            "\t[%/param%]",
+            "\t[%param *text_option%]",
+            "\t\t$4 [@name@], [@sku@]",
+            "\t[%/param%]",
+            "\t[%param *select_option%]",
+            "\t\t$5 [@name@], [@sku@]",
+            "\t[%/param%]",
+            "\t[%param *choices%]",
+            "\t\t$6 [@name@], [@sku@]",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t\t$7",
+            "\t[%/param%]",
+            "[%/extra_options%]"
+        ]
+    },
+
+    "Active Coupons": {
+        "prefix": "active_coupons",
+        "body": [
+            "[%active_coupons%]",
+            "\t[%param *body%]",
+            "\t\t$1 [@voucher_title@] [@remain_amount@]",
+            "\t[%/param%]",
+            "[%/active_coupons%]"
+        ]
+    },
+
+    "Cart Items": {
+        "prefix": "cart_items",
+        "body": [
+            "[%cart_items%]",
+            "\t[%param *header%]",
+            "\t\t$1<h4>Cart Items</h4>",
+            "\t[%/param%]",
+            "\t[%param *body%]",
+            "\t\t$2<p><img src=\"[@thumb@]\"/> [@qty@] x [@model@] x [@price@]</p>",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t[%/param%]",
+            "[%/cart_items%]"
+        ]
+    },
+
+    "Cart Item Components": {
+        "prefix": "cart_item_components",
+        "body": [
+            "[%cart_item_components counter:'$1[@counter@]'%]",
+            "\t[%param *header%]",
+            "\t\t$2<h4>Cart Item Components</h4>",
+            "\t[%/param%]",
+            "\t[%param *body%]",
+            "\t\t$3<p>[@qty@] x [@model@]</p>",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t\t$4",
+            "\t[%/param%]",
+            "[%/cart_item_components%]"
+        ]
+    },
+
+    "Cart Addresses": {
+        "prefix": "cart_addresses",
+        "body": [
+            "[%cart_addresses ship_mode:'$1[@ship_mode@]'%]",
+            "\t[%param *header%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "\t[%param *body%]",
+            "\t\t$3",
+            "\t[%/param%]",
+            "\t[%param *footer%]",
+            "\t$4",
+            "\t[%/param%]",
+            "[%/cart_addresses%]"
+        ]
+    },
+
+    "Cart Vouchers": {
+        "prefix": "cart_vouchers",
+        "body": [
+            "[%cart_vouchers type:'$1voucher'%]",
+            "\t[%param *body%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "[%/cart_vouchers%]"
+        ]
+    },
+
+    "Active Vouchers": {
+        "prefix": "active_vouchers",
+        "body": [
+            "[%active_vouchers%]",
+            "\t[%param *body%]",
+            "\t\t$1 [@voucher_title@] [@remain_amount@]",
+            "\t[%/param%]",
+            "[%/active_vouchers%]"
+        ]
+    },
+
+    "Cart": {
+        "prefix": "cart",
+        "body": "[%cart id:'$1'%]"
+    },
+
+    "Countries": {
+        "prefix": "countries",
+        "body": [
+            "[%countries sortby:'$1sortorder,name' %]",
+            "\t[%param *body%]",
+            "\t\t$2 <p>[@country_code@] - [@country_name@]</p>",
+            "\t[%/param%]",
+            "[%/countries%]"
+        ]
+    },
+
+    "Print Order": {
+        "prefix": "print_order",
+        "body": "[%print_order id:'$1[@order_id@]' /%]"
+    },
+
+    "Show Standing Order": {
+        "prefix": "show_standing_order",
+        "body": [
+            "[%show_standing_order id:'$1[@storder_id@]'%]",
+            "\t[%param *body%]",
+            "\t\t$2",
+            "\t[%/param%]",
+            "[%/show_standing_order%]"
+        ]
+    },
+
+    "Order Refunds": {
+        "prefix": "order_refunds",
+        "body": [
+            "[%order_refunds id:'[@order_id@]'%]",
+            "\t[%param *body%]",
+            "\t\t<p>[@rma_id@], currently [@rma_status@], refunded [@refund_total@] on the [@date_issued@]</p>",
+            "\t[%/param%]",
+            "[%/order_refunds%]"
+        ]
+    },
+
+    "Order Payment History": {
+        "prefix": "order_payment_history",
+        "body": [
+            "[%order_payment_history id:'$1[@order_id@]'%]",
+            "\t[%param *body%]",
+            "\t\t$2<p>[@payment_amount@] Paid on [@date_paid@] with method [@payment_name@]</p>",
+            "\t[%/param%]",
+            "[%/order_payment_history%]"
+        ]
+    },
+
+    "Show Order": {
+        "prefix": "show_order",
+        "body": [
+            "[%show_order id:'$1[@order_id@]'%]",
+            "\t[%param *body%]",
+            "\t\t$2[@ship_tracking@]",
+            "\t[%/param%]",
+            "[%/show_order%]"
+        ]
+    },
+
+    "Load Ajax Template": {
+        "prefix": "load_ajax_template",
+        "body": "[%load_ajax_template id:'$1' type:'$2' template:'$3' preload:'$4' tmpl_sku:'$5'/%]"
+    },
+
+    "Load Template": {
+        "prefix": "load_template",
+        "body": "[%load_template file:'$1' /%]"
+    },
+
+    "Ajax Loader": {
+        "prefix": "ajax_loader",
+        "body": "[%ajax_loader%]$1[%/ajax_loader%]"
+    },
+
+    "Cache": {
+        "prefix": "cache",
+        "body": "[%cache id:'$1' type:'$2'%]$3[%/cache%]"
+    },
+
+    "GA Funnel": {
+        "prefix": "ga_funnel",
+        "body": "[%ga_funnel%]$1[%/ga_funnel%]"
+    },
+
+    "URL Info": {
+        "prefix": "url_info",
+        "body": "[%url_info name:'$1' /%]"
+    },
+
+    "eBay Upsell": {
+        "prefix": "ebay_upsell",
+        "body": "[%ebay_upsell sku:'$1' limit:'$2' template:'$3' ebay_store_id:'$4[@ebay_store_id@]' show_all:'1$5'/%]"
+    },
+
+    "eBay Crosssell": {
+        "prefix": "ebay_crosssell",
+        "body": "[%ebay_crosssell id:'$1' limit:'$2' template:'$3' show_all:'1$4'/%]"
+    },
+
+    "eBay Category Menu": {
+        "prefix": "ebay_category_menu",
+        "body": [
+            "[%ebay_category_menu id:'$1[@ebay_store_id@]' ebstore_url:'$2[@ebstore_url@]'%]",
+            "\t[%param header%]",
+            "\t\t$3<ul>",
+            "\t[%/param%]",
+            "\t[%param *level_1%]",
+            "\t\t\t$4<li>",
+            "\t\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_2%]",
+            "\t\t\t$5<li>",
+            "\t\t\t\t<a href=\"[@url@]\">[@name@]</a>",
+            "\t\t\t\t[%if [@next_level@]%]<ul>[@next_level@]</ul>[%/if%]",
+            "\t\t\t</li>",
+            "\t[%/param%]",
+            "\t[%param *level_3%]",
+            "\t\t\t$6<li><a href=\"[@url@]\">[@name@]</a></li>",
+            "\t[%/param%]",
+            "\t[%param footer%]",
+            "\t\t$7</ul>",
+            "\t[%/param%]",
+            "[%/ebay_category_menu%]"
+        ]
+    }
+}
