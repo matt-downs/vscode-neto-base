@@ -57,7 +57,7 @@
 		],
 		"snippets": [
             {
-                "language": "base",
+                "language": "html",
                 "path": "./snippets/base.json"
             }
         ]
