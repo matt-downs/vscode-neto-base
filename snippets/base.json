@@ -1,3 +1,4 @@
+// File originally imported from https://github.com/NetoECommerce/Neto-Atom-Snippets/blob/master/html.json
 {
     "Param tag": {
         "prefix": "param start and close",

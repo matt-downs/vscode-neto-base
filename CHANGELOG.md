@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.0
+- Added snippets from https://github.com/NetoECommerce/Neto-Atom-Snippets
+
 ## 1.1.1
 - Minor changes to the publishing process
 
