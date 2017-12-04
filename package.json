@@ -9,7 +9,7 @@
 		"syntax",
 		"highlight"
 	],
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"publisher": "matt-downs",
 	"icon": "images/icon.png",
 	"bugs": {
@@ -56,11 +56,11 @@
 			}
 		],
 		"snippets": [
-            {
-                "language": "html",
-                "path": "./snippets/base.json"
-            }
-        ]
+			{
+				"language": "html",
+				"path": "./snippets/base.json"
+			}
+		]
 	},
 	"scripts": {
 		"predeploy": "node ./node_modules/deploy-checklist ./deployChecklist.json",

@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.1
+- Stopped `@` and `%` from auto closing as this was becoming very annoying
+- Added ability to surround highlighted text with `@` or `%` symbols
+
 ## 1.2.0
 - Added snippets from https://github.com/NetoECommerce/Neto-Atom-Snippets
 
