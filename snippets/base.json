@@ -287,6 +287,15 @@
         "body": "[%site_value id:'$1' type:'load'/%]"
     },
 
+    "Site Value Footer Javascript": {
+        "prefix": "site_value(footer_javascript)",
+        "body": [
+            "[%site_value id:'footer_javascript'%]",
+            "\t$1",
+            "[%/site_value%]"
+        ]
+    },
+
     "URL Encode": {
         "prefix": "url_encode",
         "body": "[%url_encode%]$1[%/url_encode%]"
