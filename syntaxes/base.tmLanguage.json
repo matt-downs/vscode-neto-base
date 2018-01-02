@@ -60,7 +60,7 @@
             "name": "keyword.operator.base",
             "begin": "",
             "end": "",
-            "match": "(?i) (==|eq|!=|ne|<=|>=|<|>|or|and|like) ",
+            "match": "(?i) (==|eq|!=|ne|<=|>=|<|>|or|and|not|like) ",
             "patterns": []
         },
         "quotes": {
