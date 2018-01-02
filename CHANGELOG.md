@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.2
+- Added support for `not` operator
+- Added `[%site_value id:'footer_javascript'%]` snippet "site_value(footer_javascript)"
+
 ## 1.2.1
 - Stopped `@` and `%` from auto closing as this was becoming very annoying
 - Added ability to surround highlighted text with `@` or `%` symbols
