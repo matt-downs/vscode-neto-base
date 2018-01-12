@@ -1,5 +1,8 @@
 # Change Log
 
+## Unreleased
+- Fixed warehouse_qty snippet incorrect syntax
+
 ## 1.2.2
 - Added support for `not` operator
 - Added `[%site_value id:'footer_javascript'%]` snippet "site_value(footer_javascript)"

@@ -424,12 +424,12 @@
     "Warehouse Quantity": {
         "prefix": "warehouse_qty",
         "body": [
-            "[%warehouse_qty id:'$1[@sku@]' showall'$2 1'%]",
+            "[%warehouse_qty id:'[@sku@]$1' showall:'1$2'%]",
             "\t[%param *header%]",
-            "\t\t$3<h4>Warehouse QTY</h4>",
+            "\t\t<h4>Warehouse QTY</h4>$3",
             "\t[%/param%]",
             "\t[%param *body%]",
-            "\t\t$4[@warehouse_quantity@]",
+            "\t\t[@warehouse_quantity@]$4",
             "\t[%/param%]",
             "\t[%param *footer%]",
             "\t\t$5",
