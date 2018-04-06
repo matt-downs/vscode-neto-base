@@ -3,6 +3,7 @@
 ## Unreleased
 - Fixed warehouse_qty snippet incorrect syntax
 - Fixed random_products snippet incorrect syntax
+- Update old syntax from breadcrumb function snippet
 
 ## 1.2.2
 - Added support for `not` operator

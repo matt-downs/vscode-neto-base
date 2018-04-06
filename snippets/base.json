@@ -15,7 +15,7 @@
             "\t[%param *header%]",
             "\t\t<ul>",
             "\t\t\t<li><a href=\"[%url page:'home'/%]\">Home</a></li>",
-            "\t[%end param%]",
+            "\t[%/param%]",
             "\t[%param *body%]",
             "\t\t<li><a href=\"[@url@]\">[@name@]</a></li>",
             "\t[%/param%]",
