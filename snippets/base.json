@@ -176,7 +176,7 @@
             "\t[%/param%]",
             "\t[%param *footer%]",
             "\t\t$5",
-            "\t%/param%]",
+            "\t[%/param%]",
             "[%/random_products%]"
         ]
     },

@@ -2,6 +2,7 @@
 
 ## Unreleased
 - Fixed warehouse_qty snippet incorrect syntax
+- Fixed random_products snippet incorrect syntax
 
 ## 1.2.2
 - Added support for `not` operator
