@@ -1,6 +1,8 @@
 # Change Log
 
 ## Unreleased
+
+## 1.2.3
 - Fixed `warehouse_qty` snippet incorrect syntax
 - Fixed `random_products` snippet incorrect syntax
 - Update old syntax from `breadcrumb` function snippet
