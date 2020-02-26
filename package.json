@@ -68,6 +68,6 @@
 	},
 	"devDependencies": {
 		"deploy-checklist": "github:matt-downs/deploy-checklist",
-		"vsce": "^1.35.0"
+		"vsce": "^1.73.0"
 	}
 }
